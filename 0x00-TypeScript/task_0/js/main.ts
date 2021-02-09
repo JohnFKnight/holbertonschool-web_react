@@ -5,44 +5,44 @@ interface Student {
   location: string;
 }
 let student1: Student = {
-    firstName: 'Joe';
-    lastNname: 'Schmoe';
-    age: 25;
-    location: 'Hollywood';
+    firstName: 'Joe',
+    lastNname: 'Schmoe',
+    age: 25,
+    location: 'Hollywood',
 }
 
 let student2: Student = {
-    firstName: 'Jane';
-    lastNname: 'Schmane';
-    age: 23;
-    location: 'Los Angeles';
+    firstName: 'Jane',
+    lastNname: 'Schmane',
+    age: 23,
+    location: 'Los Angeles',
 }
 
-const studentsList: array = [student1, student2];
+const studentsList: any = [student1, student2];
 
-function generateTableHead(table, data) {
-	 let thead: string = table.createTHead(table);
-	 let row: string = thead.insertRow();
-	 for(let key: string of data) {
-	 	 let th: string = document.createElement('th');
-		 let text: string = document.createTextNode(key);
+function generateTableHead(table: any, data: any) {
+	 let thead = table.createTHead(table);
+	 let row = thead.insertRow();
+	 for(let key of data) {
+	 	 let th = document.createElement('th');
+		 let text = document.createTextNode(key);
 		 th.appendChild(text);
 		 row.appendChid(th);
 	 }
 }
 
-function generateTable(table, data) {
-	 for (let element: string of data) {
-	     let row: string = table.insertRow();
-	     for (let key: string in element) {
-	     	 let cell: string = row.insertCell();
-		 let text: stirng  = document.createTextNode(element[key]);
+function generateTable(table: any, data: any) {
+	 for (let element of data) {
+	     let row = table.insertRow();
+	     for (let key in element) {
+	     	 let cell = row.insertCell();
+		 let text  = document.createTextNode(element[key]);
 		 cell.appendChild(text)
 	     }
 	 }
 }
 
-let table: string = document.createElement('table');
-let data: array = Object.keys(studentsList[0]);
+let table = document.createElement('table');
+let data = Object.keys(studentsList[0]);
 generateTable(table, studentsList);
 generateTableHead(table,data);
