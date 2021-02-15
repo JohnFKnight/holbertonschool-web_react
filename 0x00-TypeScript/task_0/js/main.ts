@@ -1,20 +1,20 @@
 'use strict';
 interface Student {
   firstName: string;
-  lastNname: string;
+  lastName: string;
   age: number;
   location: string;
 }
 let student1: Student = {
     firstName: 'Joe',
-    lastNname: 'Schmoe',
+    lastName: 'Schmoe',
     age: 25,
     location: 'Hollywood',
 }
 
 let student2: Student = {
     firstName: 'Jane',
-    lastNname: 'Schmane',
+    lastName: 'Schmane',
     age: 23,
     location: 'Los Angeles',
 }
