@@ -29,9 +29,11 @@ for (let student: Student of studentsList ) {
         // console.log(student.firstName);
 	// console.log(student.location);
     	let td: HTMLTableCellElement = row.insertCell();
-	let text: string = document.createTextNode(student.firstName);
-	td.appendChild(text);
+	td.textContent = student.firstName;
+	// let text: string = document.createTextNode(student.firstName);
+	// td.appendChild(text);
     	let td: HTMLTableCellElement = row.insertCell();
-	let text: string = document.createTextNode(student.location);
-	td.appendChild(text);
+	td.textContent = student.location;
+	// let text: string = document.createTextNode(student.location);
+	// td.appendChild(text);
 }
