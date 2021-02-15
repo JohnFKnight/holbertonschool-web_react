@@ -23,7 +23,7 @@ const studentsList: Array<Student> = [student1, student2];
 let table: HTMLTableElement = document.createElement('table');
 document.body.appendChild(table);
 
-for (let student of studentsList ) {
+for (const student: Student of studentsList ) {
     // console.log('STUDENT: ', student);
     let row: HTMLTableRowElement = table.insertRow();
     // console.log(student.firstName);
