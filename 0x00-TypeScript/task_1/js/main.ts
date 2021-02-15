@@ -21,9 +21,9 @@ interface Directors extends Teacher {
 }
 
 function printTeacher(firstName: string, lastName: string) {
-  return `${firstName.charAt(0)}, ${lastName}`;
+  return firstName.charAt(0) + ', ' + lastName;
 }
 
 interface printTeacherFunction {
-  printTeacher(name1: string, name2: strint): string;
+  printTeacher(name1: string, name2: string): string;
 }
