@@ -21,16 +21,21 @@ let student2: Student = {
 
 const studentsList: any = [student1, student2];
 let table = document.createElement('table');
-let data = Object.keys(studentsList[0]);
-
+// let data = Object.keys(studentsList[1]);
+// console.log(data);
 document.body.appendChild(table);
 
-for (let element of data) {
-    console.log('ELEMENT: ', element);
+for (let student of studentsList ) {
+    console.log('STUDENT: ', student);
     let row = table.insertRow();
-    for(let val of element) {
+    // for(let val of student) {
+        console.log(student.firstName);
+	console.log(student.location);
     	let td = row.insertCell();
-	let text = document.createTextNode(val);
+	let text = document.createTextNode(student.firstName);
 	td.appendChild(text);
-     }
+    	let td = row.insertCell();
+	let text = document.createTextNode(student.location);
+	td.appendChild(text);
+     // }
 }
