@@ -20,13 +20,11 @@ let student2: Student = {
 }
 
 const studentsList: any = [student1, student2];
-let table = document.createElement('table');
-// let data = Object.keys(studentsList[1]);
-// console.log(data);
+let table: any = document.createElement('table');
 document.body.appendChild(table);
 
 for (let student: Student of studentsList ) {
-    console.log('STUDENT: ', student);
+    // console.log('STUDENT: ', student);
     let row: any = table.insertRow();
         console.log(student.firstName);
 	console.log(student.location);
