@@ -25,17 +25,15 @@ let table = document.createElement('table');
 // console.log(data);
 document.body.appendChild(table);
 
-for (let student of studentsList ) {
+for (let student: Student of studentsList ) {
     console.log('STUDENT: ', student);
-    let row = table.insertRow();
-    // for(let val of student) {
+    let row: any = table.insertRow();
         console.log(student.firstName);
 	console.log(student.location);
-    	let td = row.insertCell();
-	let text = document.createTextNode(student.firstName);
+    	let td: any = row.insertCell();
+	let text: string = document.createTextNode(student.firstName);
 	td.appendChild(text);
-    	let td = row.insertCell();
-	let text = document.createTextNode(student.location);
+    	let td: any = row.insertCell();
+	let text: string = document.createTextNode(student.location);
 	td.appendChild(text);
-     // }
 }
