@@ -27,4 +27,5 @@ function printTeacher(firstName: string, lastName: string): string {
 interface printTeacherFunction {
   printTeacher(name1: string, name2: string): string;
 }
+const printTeacher: printTeacherFunction;
 // console.log(printTeacher('John', 'Knight'));
