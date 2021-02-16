@@ -25,6 +25,6 @@ $(document).ready(() => {
       // $('#count').html((i, val) {
       // 	return val * 1 + 1;
       // })
-    }, 1000));
+    }, 500));
   }
 });
