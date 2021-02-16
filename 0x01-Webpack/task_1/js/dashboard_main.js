@@ -19,15 +19,12 @@ $(document).ready(() => {
 
   let count = 0;
   function updateCounter() {
-    $('button').click(() => {
+    $('button').click(_.debounce(() => {
       count++;
       $('#count').text(count + ' clicks on the button');
       // $('#count').html((i, val) {
       // 	return val * 1 + 1;
       // })
-    });
+    }, 1000));
   }
 });
-
-_.debounce(updateCounter, 1000);
-updateCounter();
