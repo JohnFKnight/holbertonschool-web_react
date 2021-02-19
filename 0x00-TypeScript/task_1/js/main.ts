@@ -29,3 +29,18 @@ interface printTeacherFunction {
 }
 const printTeacher: printTeacherFunction;
 // console.log(printTeacher('John', 'Knight'));
+
+class StudentClass {
+  constructor(firstName: string, lastName: string) {
+    this._firstName = firstName;
+    this._lastName = lastName
+  }
+
+  workOnHomework() {
+    return 'Currently working';
+  }
+
+  displayName() {
+    return this._firstName;
+  }
+}

@@ -4,7 +4,7 @@ import _ from 'lodash';
 $(document).ready(() => {
   $('body').append('<p>Holberton Dashboard</p>');
   $('body').append('<p>Dashboard data for the students</p>');
-  $('body').append('<buttonClick here to get starteds</button>');
+  $('body').append('<button>Click here to get starteds</button>');
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - Holberton School</p>');
 
