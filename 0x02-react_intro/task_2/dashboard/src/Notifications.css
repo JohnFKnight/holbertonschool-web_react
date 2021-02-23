@@ -2,3 +2,9 @@
     padding: 5;
     border: 2px solid crimson;
 }
+[data-priority='default'] {
+    color: blue;
+}    
+[data-priority='urgent'] {
+ color: red;   
+}
