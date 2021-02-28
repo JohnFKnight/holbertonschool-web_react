@@ -3,7 +3,6 @@
     font-weight: bold;
 }
 #logo {
-    display: inline-block;
     width: 200px;
     height: 200px;
     background-image: url("../assets/holberton-logo.jpg");
