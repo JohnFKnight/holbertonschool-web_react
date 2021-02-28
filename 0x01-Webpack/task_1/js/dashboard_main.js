@@ -4,7 +4,7 @@ import _ from 'lodash';
 $(document).ready(() => {
   $('body').append('<p>Holberton Dashboard</p>');
   $('body').append('<p>Dashboard data for the students</p>');
-  $('body').append('<button>Click here to get starteds</button>');
+  $('body').append('<button>Click here to get started</button>');
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - Holberton School</p>');
 
@@ -19,12 +19,20 @@ $(document).ready(() => {
 
   let count = 0;
   function updateCounter() {
+    // From Will. It works.
+  //   count = count + 1;
+  //   $('#count').text(`${count.toString()} clicks on the button`);
+  // }
+  // $('button').click(_.debounce(updateCounter));
+
+    // $('button').on('click', (_.debounce(() => {
     $('button').click(_.debounce(() => {
-      count++;
-      $('#count').text(count + ' clicks on the button');
+        count++;
+      $('#count').html(`${count} clicks on the button`);
       // $('#count').html((i, val) {
       // 	return val * 1 + 1;
       // })
     }, 500));
   }
+  updateCounter();
 });

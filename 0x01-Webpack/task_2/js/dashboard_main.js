@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import '.css/main.css'
+import '../css/main.css'
+// import '../assets/holberton-logo.jpg'
 
 $(document).ready(() => {
   $('body').append('<div id="logo"></div>');
@@ -10,23 +11,12 @@ $(document).ready(() => {
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - Holberton School</p>');
 
-  // let button = $(document.createElement('button')).prop({
-  //   type: 'button',
-  //   innerHTML: 'Click here to get started'
-  // })
-  // $('body').append(button);
-
-  // $('p').append('<p id='count'></p>');
-  // $('p').append('Copyright - Holberton School');
-
   let count = 0;
   function updateCounter() {
     $('button').click(_.debounce(() => {
-      count++;
-      $('#count').text(count + ' clicks on the button');
-      // $('#count').html((i, val) {
-      // 	return val * 1 + 1;
-      // })
+      // count++;
+      $('#count').text(`${count++} clicks on the button`);
     }, 500));
   }
+  updateCounter();
 });
