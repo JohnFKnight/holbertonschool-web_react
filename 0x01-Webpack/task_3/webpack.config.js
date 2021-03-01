@@ -10,7 +10,7 @@ module.exports = {
   },
   mode: "development",
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, './public'),
     compress: true,
     port: 8564,
   },
