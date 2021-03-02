@@ -11,7 +11,7 @@ $(document).ready(() => {
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - Holberton School</p>');
 
-  let count = 0;
+  let count = 1;
   function updateCounter() {
     $('button').click(_.debounce(() => {
       // count++;
