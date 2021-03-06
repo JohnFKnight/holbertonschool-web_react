@@ -22,11 +22,19 @@ export default function Notifications()
             >
           <button
             aria-label="Close"
+            style={{
+              position: 'absolute',
+              top: 15,
+              right: 10,
+              backgroundColor: 'white',
+              border: 'none',
+              cursor: 'pointer',
+              outline: 'none',
+            }}
             onClick={() => console.log('Close button has been clicked')}>
             <img src={closeIcon} alt="close-icon"
               style={{
-                height: 20,
-                width: 20
+                height: 15,
               }} />
           </button>
           </div>
