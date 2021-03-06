@@ -19,10 +19,11 @@ export default function Notifications() {
             position: 'absolute',
             top: 15,
             right: 10,
+            // backgroundColor: 'white',
             visibility: 'hidden',
             border: 'none',
+            // outline: 'none',
             cursor: 'pointer',
-            outline: 'none',
           }}
           onClick={() => console.log('Close button has been clicked')}>
           <img src={closeIcon} alt="close-icon"
