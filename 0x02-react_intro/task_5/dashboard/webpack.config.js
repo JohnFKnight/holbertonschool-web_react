@@ -1,36 +1,57 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
-  mode: "development",
+  entry: {
+    all: ["./src/index.js"],
+  },
+  devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, './dist'),
-    compress: true,
-    port: 8564,
+    contentBase: "./dist",
+    port: 8564
+  },
+  mode: "production",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
   },
   module: {
     rules: [
       {
-       test: /\.css$/i,
-       use: ['style-loader', 'css-loader']
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(png|svg|jpg|gif)$/,
         use: [
+          'file-loader',
           {
             loader: 'image-webpack-loader',
             options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true, // webpack@2.x and newer
-            },
+              mozjpeg: {
+                progressive: true,
+              },
+              //optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75
+              }
+            }
           },
-        ],
-      },
+        ]
+      }
     ]
-  },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-  },
-  devtool: 'inline-source-map',
-};
+  }
+}
