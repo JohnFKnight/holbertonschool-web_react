@@ -1,6 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -19,7 +17,6 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          'file-loader',
           {
             loader: 'image-webpack-loader',
             options: {
@@ -32,17 +29,8 @@ module.exports = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin()
-  ],
   devtool: 'inline-source-map',
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all',
-  //   },
-  // },
 };
