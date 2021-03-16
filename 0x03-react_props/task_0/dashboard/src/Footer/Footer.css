@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+}
+.App-footer {
+  border-top: 3px solid crimson;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+}
