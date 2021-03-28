@@ -5,7 +5,7 @@ import { shallow, mount, render } from 'enzyme';
 
 // configure({adapter: new Adapter()});
 const wrapper = shallow(<Login />);
-describe('<App />', () => {
+describe('<Login />', () => {
   it('renders without crashing', () => {
     expect(wrapper.exists());
   });
