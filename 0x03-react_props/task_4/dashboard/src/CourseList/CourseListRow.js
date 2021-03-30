@@ -1,0 +1,37 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+// isHeader (bool, default: false)
+// textFirstCell (string, required)
+// textSecondCell (string, default: null)
+
+function CourseListRow(isHeader, textFirstCell, textSecondCell) {
+    const th
+    if (isHeader) {
+        if (textSecondCell == null) {
+            return (
+                <tr>
+                    <th colSpan='2'>{textFirstCell}</th>;
+                </tr>
+            );
+        }
+        else {
+            return (
+                <tr>
+                    <th>{textFirstCell}</th>
+                    <th>{textSecondCell}</th>
+                </tr>
+            );
+        }
+    }
+    else {
+        return (
+            <tr>
+                <td>{textFirstCell}</td>
+                <td>{textSecondCell}</td>
+            </tr>
+        );
+    }
+};
+
+export default CourseListRow;
