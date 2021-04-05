@@ -19,16 +19,16 @@ let student2: Student = {
     location: 'Los Angeles',
 }
 
-let studentsList: Array<Student> = [student1, student2];
+const studentsList: Array<Student> = [student1, student2];
 // let body: HTMLBodyElement = document.getElementsByTagName("body")[0];
-let tbl: HTMLTableElement = document.createElement('table');
-let tblBody: HTMLTableSectionElement = document.createElement("tbody");
+const tbl: HTMLTableElement = document.createElement('table');
+const tblBody: HTMLTableSectionElement = document.createElement("tbody");
 document.body.appendChild(tbl);
 tbl.appendChild(tblBody);
 
 for (const student of studentsList ) {
     // console.log('STUDENT: ', student);
-    let row: HTMLTableRowElement = tbl.insertRow();
+    const row: HTMLTableRowElement = tbl.insertRow();
     // console.log(student.firstName);
     // console.log(student.location);
     const td1: HTMLTableCellElement = row.insertCell();
