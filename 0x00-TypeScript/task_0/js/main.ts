@@ -1,18 +1,17 @@
-'use strict';
 interface Student {
   firstName: string;
   lastName: string;
   age: number;
   location: string;
 }
-let student1: Student = {
+const student1: Student = {
     firstName: 'Joe',
     lastName: 'Schmoe',
     age: 25,
     location: 'Hollywood',
 }
 
-let student2: Student = {
+const student2: Student = {
     firstName: 'Jane',
     lastName: 'Schmane',
     age: 23,
@@ -43,7 +42,7 @@ trHead.append(th2);
 studentsList.forEach((student) => {
 // for (const student of studentsList ) {
     const row: HTMLTableRowElement = tbl.insertRow();
-    tblBody.appendChild(row);
+    tblBody.append(row);
     const td1: HTMLTableCellElement = row.insertCell();
     const text1: Text = document.createTextNode(student.firstName);
     td1.appendChild(text1);
