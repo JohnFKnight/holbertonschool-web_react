@@ -26,20 +26,24 @@ const tblBody: HTMLTableSectionElement = document.createElement("tbody");
 document.body.appendChild(tbl);
 tbl.appendChild(tblBody);
 
-for (const student of studentsList ) {
+studentsList.forEach((student) => {
+// for (const student of studentsList ) {
     // console.log('STUDENT: ', student);
     const row: HTMLTableRowElement = tbl.insertRow();
     // console.log(student.firstName);
     // console.log(student.location);
     const td1: HTMLTableCellElement = row.insertCell();
-    td1.textContent = student.firstName;
+    const text1: Text = document.createTextNode(student.firstName);
+    td1.appendChild(text1);
     // let text: string = document.createTextNode(student.firstName);
     // td.appendChild(text);
     const td2: HTMLTableCellElement = row.insertCell();
-    td2.textContent = student.location;
+    const text2: Text = document.createTextNode(student.location);
+    td2.appendChild(text2);
     // let text: string = document.createTextNode(student.location);
     // td.appendChild(text);
-}
+    tblBody.appendChild(row);
+})
 
 // function generateTableHead(table, data) {
 //  let thead: HTMLTableSectionElement = table.createTHead(table);
