@@ -23,15 +23,22 @@ const studentsList: Array<Student> = [student1, student2];
 // let body: HTMLBodyElement = document.getElementsByTagName("body")[0];
 const tbl: HTMLTableElement = document.createElement('table');
 const tblBody: HTMLTableSectionElement = document.createElement("tbody");
-document.body.appendChild(tbl);
-tbl.appendChild(tblBody);
+const thead: HTMLTableSectionElement = document.createElement('thead');
+const trHead: HTMLTableRowElement = tbl.insertRow();
+const th1: HTMLTableCellElement = trHead.insertCell();
+const th2: HTMLTableCellElement = trHead.insertCell();
+
+th1.append("Name");
+th2.append("Location");
+
+trHead.append(th1);
+trHead.append(th2);
+thead.append(trHead);
+tbl.append(thead);
 
 studentsList.forEach((student) => {
 // for (const student of studentsList ) {
-    // console.log('STUDENT: ', student);
     const row: HTMLTableRowElement = tbl.insertRow();
-    // console.log(student.firstName);
-    // console.log(student.location);
     const td1: HTMLTableCellElement = row.insertCell();
     const text1: Text = document.createTextNode(student.firstName);
     td1.appendChild(text1);
@@ -44,6 +51,9 @@ studentsList.forEach((student) => {
     // td.appendChild(text);
     tblBody.appendChild(row);
 })
+
+tbl.appendChild(tblBody);
+document.body.appendChild(tbl);
 
 // function generateTableHead(table, data) {
 //  let thead: HTMLTableSectionElement = table.createTHead(table);
