@@ -35,7 +35,7 @@ interface printTeacherFunction {
   (name1: string, name2: string): string;
 }
 
-export const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
   return firstName.charAt(0) + '. ' + lastName;
 }
 
