@@ -39,21 +39,33 @@ export const printTeacher: printTeacherFunction = (firstName: string, lastName: 
   return firstName.charAt(0) + '. ' + lastName;
 }
 
-let teach = printTeacher;
+let teach: printTeacherFunction = printTeacher;
 
 console.log(teach('John', 'Knight'));
 
-// class StudentClass {
-//   constructor(firstName: string, lastName: string) {
-//     this._firstName = firstName;
-//     this._lastName = lastName
-//   }
+interface IStudentClass {
+  firstName: string;
+  lastName: string;
+}
 
-//   workOnHomework() {
-//     return 'Currently working';
-//   }
+// interface IConstructor {
 
-//   displayName() {
-//     return this._firstName;
-//   }
 // }
+
+export class StudentClass implements IStudentClass {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework() {
+    return 'Currently working';
+  }
+
+  displayName() {
+    return this.firstName;
+  }
+}
