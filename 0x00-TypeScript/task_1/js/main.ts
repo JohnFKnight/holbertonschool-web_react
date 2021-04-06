@@ -29,15 +29,17 @@ const director1: Directors = {
 };
 console.log(director1);
 
+interface printTeacherFunction {
+  (name1: string, name2: string): string;
+}
+
 function printTeacher(firstName: string, lastName: string): string {
   return firstName.charAt(0) + '. ' + lastName;
 }
 
-interface printTeacherFunction {
-  printTeacher(name1: string, name2: string): string;
-}
-let printTeach: printTeacherFunction;
-console.log(printTeacher('John', 'Knight'));
+// const teach: string = printTeacher('John', 'Knight');
+
+// console.log(teach);
 
 class StudentClass {
   constructor(firstName: string, lastName: string) {
