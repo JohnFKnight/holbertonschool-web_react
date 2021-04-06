@@ -38,9 +38,9 @@ function printTeacher(firstName: string, lastName: string): string {
   return firstName.charAt(0) + '. ' + lastName;
 }
 
-const teach: printTeacherFunction = printTeacher;
+let teach: printTeacherFunction = printTeacher;
 
-// console.log(teach('John', 'Knight'));
+console.log(teach('John', 'Knight'));
 
 // class StudentClass {
 //   constructor(firstName: string, lastName: string) {
