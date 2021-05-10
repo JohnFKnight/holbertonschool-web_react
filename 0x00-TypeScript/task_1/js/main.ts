@@ -53,7 +53,7 @@ console.log(teach('John', 'Knight'));
 // Task 4.
 
 interface StudentConstructor {
-  new (firstName: string, lastName: string): StudentClassInterface;
+  new(firstName: string, lastName: string): StudentClassInterface;
 }
 
 interface StudentClassInterface {
