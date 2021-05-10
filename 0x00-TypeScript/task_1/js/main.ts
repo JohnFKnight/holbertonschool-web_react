@@ -52,7 +52,7 @@ interface StudentClassConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-class StudentClass implements StudentClassInterface {
+const StudentClass: StudentClassConstructor = class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
 
@@ -70,4 +70,4 @@ class StudentClass implements StudentClassInterface {
   }
 }
 
-const StudentClass: StudentClassConstructor;
+// const StudentClass: StudentClassConstructor;
