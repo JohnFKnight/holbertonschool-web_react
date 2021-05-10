@@ -1,4 +1,12 @@
+/* eslint-disable */
+/* [propName: string]: any */
+/* new( ): StudentClassInterface interface StudentClassInterface { displayName(): string workOnHomework(): string */
+/* class StudentClass implements StudentClassInterface */
+
 'use strict';
+
+// Task 1.
+
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -17,6 +25,8 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
+// Task 2.
+
 interface Directors extends Teacher {
   numberOfReports: number;
 }
@@ -31,17 +41,21 @@ const director1: Directors = {
 
 console.log(director1);
 
+// Task 3.
+
 interface printTeacherFunction {
   (name1: string, name2: string): string;
 }
 
-export const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
   return firstName.charAt(0) + '. ' + lastName;
 }
 
 const teach: printTeacherFunction = printTeacher;
 
 console.log(teach('John', 'Knight'));
+
+// Task 4.
 
 interface StudentClassInterface {
   firstName: string;
@@ -72,4 +86,9 @@ const StudentClass: StudentClassConstructor = class StudentClass implements Stud
   }
 };
 
-// const StudentClass: StudentClassConstructor;
+const student = new StudentClass('Guillaume', 'Salva');
+console.log(student.firstName);
+console.log(student.lastName);
+console.log(student.workOnHomework());
+console.log(student.displayName());
+
