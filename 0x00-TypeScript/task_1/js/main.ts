@@ -57,15 +57,15 @@ console.log(teach('John', 'Knight'));
 
 // Task 4.
 
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
 interface StudentClassInterface {
   firstName: string;
   lastName: string;
   displayName(): string;
   workOnHomework(): string;
-}
-
-interface StudentConstructor {
-  new (firstName: string, lastName: string): StudentClassInterface;
 }
 
 const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
