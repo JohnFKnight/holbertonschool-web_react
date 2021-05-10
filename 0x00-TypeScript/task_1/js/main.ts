@@ -57,31 +57,32 @@ console.log(teach('John', 'Knight'));
 
 // Task 4.
 
-interface StudentClassInterface {
+interface StudentInterface {
   firstName: string;
   lastName: string;
-  displayName(): string;
-  workOnHomework(): string;
+  workOnHomework (): string;
+  displayName (): string;
 }
 
-interface StudentClassConstructor {
-  new (firstName: string, lastName: string): StudentClassInterface;
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentInterface;
 }
 
-const StudentClass: StudentClassConstructor = class StudentClass implements StudentClassInterface {
+const StudentClass: StudentConstructor = class StudentClass implements StudentInterface {
   firstName: string;
   lastName: string;
 
-  constructor(firstName: string, lastName: string) {
+  constructor (firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
-  workOnHomework(): string {
+  workOnHomework (): string {
     return 'Currently working';
   }
 
-  displayName(): string {
+
+  displayName (): string {
     return this.firstName;
   }
 };
