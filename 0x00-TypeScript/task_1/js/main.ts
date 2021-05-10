@@ -44,6 +44,8 @@ let teach: printTeacherFunction = printTeacher;
 console.log(teach('John', 'Knight'));
 
 interface StudentClassInterface {
+  firstName: string;
+  lastName: string;
   displayName(): string,
   workOnHomework(): string
 }
@@ -68,6 +70,6 @@ const StudentClass: StudentClassConstructor = class StudentClass implements Stud
   displayName(): string {
     return this.firstName;
   }
-}
+};
 
 // const StudentClass: StudentClassConstructor;
