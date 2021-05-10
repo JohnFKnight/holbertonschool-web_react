@@ -1,9 +1,4 @@
-/* eslint-disable */
-/* [propName: string]: any */
-/* new( ): StudentClassInterface interface StudentClassInterface { displayName(): string workOnHomework(): string */
-/* class StudentClass implements StudentClassInterface */
-
-// 'use strict';
+'use strict';
 
 // Task 1.
 
@@ -57,32 +52,31 @@ console.log(teach('John', 'Knight'));
 
 // Task 4.
 
-interface StudentInterface {
+interface StudentClassInterface {
   firstName: string;
   lastName: string;
-  workOnHomework (): string;
-  displayName (): string;
+  displayName(): string;
+  workOnHomework(): string;
 }
 
 interface StudentConstructor {
-  new (firstName: string, lastName: string): StudentInterface;
+  new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-const StudentClass: StudentConstructor = class StudentClass implements StudentInterface {
+const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
 
-  constructor (firstName: string, lastName: string) {
+  constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
-  workOnHomework (): string {
+  workOnHomework(): string {
     return 'Currently working';
   }
 
-
-  displayName (): string {
+  displayName(): string {
     return this.firstName;
   }
 };
