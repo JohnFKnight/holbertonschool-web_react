@@ -43,16 +43,16 @@ let teach: printTeacherFunction = printTeacher;
 
 console.log(teach('John', 'Knight'));
 
-interface IStudentClass {
-  firstName: string;
-  lastName: string;
+interface StudentClassInterface {
+  displayName(): string,
+  workOnHomework(): string
 }
 
-// interface IConstructor {
+interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
 
-// }
-
-export class StudentClass implements IStudentClass {
+class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
 
@@ -69,3 +69,5 @@ export class StudentClass implements IStudentClass {
     return this.firstName;
   }
 }
+
+// const StudentClass: StudentClassConstructor;
