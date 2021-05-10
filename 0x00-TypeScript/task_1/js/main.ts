@@ -70,4 +70,4 @@ class StudentClass implements StudentClassInterface {
   }
 }
 
-// const StudentClass: StudentClassConstructor;
+const StudentClass: StudentClassConstructor;
