@@ -44,6 +44,8 @@ const teach: printTeacherFunction = printTeacher;
 console.log(teach('John', 'Knight'));
 
 interface StudentClassInterface {
+  firstName: string;
+  lastName: string;
   displayName(): string;
   workOnHomework(): string;
 }
