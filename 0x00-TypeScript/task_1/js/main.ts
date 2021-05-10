@@ -57,13 +57,11 @@ interface StudentConstructor {
 }
 
 interface StudentClassInterface {
-  firstName: string;
-  lastName: string;
   displayName(): string;
   workOnHomework(): string;
 }
 
-const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
+export const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
 
