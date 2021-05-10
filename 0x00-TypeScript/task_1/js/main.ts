@@ -61,11 +61,11 @@ const StudentClass: StudentClassConstructor = class StudentClass implements Stud
     this.lastName = lastName;
   }
 
-  workOnHomework() {
+  workOnHomework(): string {
     return 'Currently working';
   }
 
-  displayName() {
+  displayName(): string {
     return this.firstName;
   }
 }
