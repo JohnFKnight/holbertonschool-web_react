@@ -1,63 +1,73 @@
-/* eslint-disable */
-/* [propName: string]: any */
-/* new( ): StudentClassInterface interface StudentClassInterface { displayName(): string workOnHomework(): string */
-/* class StudentClass implements StudentClassInterface */
-
-
+'use strict';
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [other: string]: any;
+  [propName: string]: any;
 }
+const teacher3: Teacher = {
+  firstName: 'John',
+  fullTimeEmployee: false,
+  lastName: 'Doe',
+  location: 'London',
+  contract: false
+};
+
+console.log(teacher3);
 
 interface Directors extends Teacher {
   numberOfReports: number;
 }
 
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17
+};
+
+console.log(director1);
 
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  (name1: string, name2: string): string;
 }
 
-const printTeacher: printTeacherFunction = function (firstName: string, lastName: string): string {
-  if (firstName.length > 0) {
-    let x = `${firstName[0]}. ${lastName}`;
-    console.log(x);
-    return x;
-  }
-  console.log(lastName);
-  return lastName;
+export const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+  return firstName.charAt(0) + '. ' + lastName;
 }
 
-interface StudentInterface {
-  firstName: string;
-  lastName: string;
-  workOnHomework (): string;
-  displayName (): string;
+const teach: printTeacherFunction = printTeacher;
+
+console.log(teach('John', 'Knight'));
+
+interface StudentClassInterface {
+  displayName(): string;
+  workOnHomework(): string;
 }
 
-interface StudentConstructor {
-  new (firstName: string, lastName: string): StudentInterface;
+interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-const StudentClass: StudentConstructor = class StudentClass implements StudentInterface {
+const StudentClass: StudentClassConstructor = class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
 
-  constructor (firstName: string, lastName: string) {
+  constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
-  workOnHomework (): string {
+  workOnHomework(): string {
     return 'Currently working';
   }
 
-
-  displayName (): string {
+  displayName(): string {
     return this.firstName;
   }
 };
+
+// const StudentClass: StudentClassConstructor;
