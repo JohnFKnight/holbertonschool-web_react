@@ -57,6 +57,8 @@ interface StudentConstructor {
 }
 
 interface StudentClassInterface {
+  firstName: string;
+  lastName: string;
   displayName(): string;
   workOnHomework(): string;
 }
