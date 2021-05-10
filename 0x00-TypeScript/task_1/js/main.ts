@@ -50,24 +50,32 @@ interface StudentClassInterface {
   workOnHomework(): string
 }
 
-interface StudentClassConstructor {
-  new (firstName: string, lastName: string): StudentClassInterface;
+interface StudentInterface {
+  firstName: string;
+  lastName: string;
+  workOnHomework (): string;
+  displayName (): string;
 }
 
-const StudentClass: StudentClassConstructor = class StudentClass implements StudentClassInterface {
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentInterface;
+}
+
+const StudentClass: StudentConstructor = class StudentClass implements StudentInterface {
   firstName: string;
   lastName: string;
 
-  constructor(firstName: string, lastName: string) {
+  constructor (firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
-  workOnHomework(): string {
+  workOnHomework (): string {
     return 'Currently working';
   }
 
-  displayName(): string {
+
+  displayName (): string {
     return this.firstName;
   }
 };
