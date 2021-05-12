@@ -69,10 +69,9 @@ const emp3 = createEmployee('$500');
 console.log(emp3.workFromHome());
 
 export function isDirector(employee: Director | Teacher): employee is Director {
-  // return typeof director.workDirectorTasks() === "string";
   return employee.workFromHome() === 'Working from home';
 }
-export function executeWork(employee: Director | Teacher): string {
+export function executeWork(employee: DirectorInterface | TeacherInterface): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   }
