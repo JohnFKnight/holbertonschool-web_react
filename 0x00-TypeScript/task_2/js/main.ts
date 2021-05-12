@@ -43,7 +43,7 @@ export class Teacher implements TeacherInterface {
 }
 
 export function createEmployee(salary: number | string) {
-  if (typeof salary == "number" && salary < 500) {
+  if (typeof salary === "number" && salary < 500) {
     return new Teacher;
   }
   else {
@@ -53,8 +53,33 @@ export function createEmployee(salary: number | string) {
 const director = new Director;
 const teacher = new Teacher;
 
-console.log(teacher.workTeacherTasks());
-console.log(director.workDirectorTasks());
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
+console.log(typeof teacher.workTeacherTasks());
+// console.log(director.workDirectorTasks());
+console.log(director instanceof Director);
+console.log(teacher instanceof Teacher);
+// console.log(createEmployee(200));
+// console.log(createEmployee(1000));
+// console.log(createEmployee('$500'));
+
+const emp1 = createEmployee(200);
+console.log(emp1.workFromHome());
+const emp2 = createEmployee(1000);
+console.log(emp2.workFromHome());
+const emp3 = createEmployee('$500');
+console.log(emp3.workFromHome());
+
+function isDirector(employee: Director | Teacher): employee is Director {
+  // return typeof director.workDirectorTasks() === "string";
+  return employee.workFromHome() === 'Working from home';
+}
+export function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  }
+  else {
+    return employee.workTeacherTasks(); 
+  }
+}
+
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
