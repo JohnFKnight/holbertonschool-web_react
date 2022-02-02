@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 import Notifications from '../Notifications/Notifications';
 import CourseList from '../CourseList/CourseList';
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { bool } from 'prop-types';
 
 class App extends React.Component {
   render() {
@@ -14,7 +14,12 @@ class App extends React.Component {
         <Notifications />
         <div className="App">
           <Header />
-          <Login />
+          if (this.props.isLoggedIn) {
+            <Login />
+          }
+          else {
+            <CourseList />
+          }
           <Footer />
         </div>
       </React.Fragment>
@@ -22,4 +27,10 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  isLoggedIn: PropTypes.bool
+}
+App.defaultProps = {
+  isLoggedIn: false
+}
 export default App;

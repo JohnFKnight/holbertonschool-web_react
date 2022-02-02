@@ -86,4 +86,3 @@ console.log(student.firstName);
 console.log(student.lastName);
 console.log(student.workOnHomework());
 console.log(student.displayName());
-

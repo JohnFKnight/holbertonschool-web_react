@@ -25,4 +25,8 @@ describe('<App />', () => {
     const wrapper = shallow(<Footer />);
     expect(wrapper.exists());
   });
+  it("doesn't render CourseList by default", () => {
+    const wrapper = shahllow(<CourseList />);
+    expect(wrapper.toBeNull())
+  })
 });

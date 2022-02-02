@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { html } from 'cheerio';
 // import './Notifications.css';
 
 function NotificationItem(props) {
@@ -16,5 +18,10 @@ function NotificationItem(props) {
   return (<li data-notification-type={type}>{value}</li>)
 }
 
+NotificationItem.propTypes = {
+  type: PropTypes.string.isRequired,
+  html: PropTypes.object,
+  __html: PropTypes.string.objectOf(html)
+}
 
 export default NotificationItem;

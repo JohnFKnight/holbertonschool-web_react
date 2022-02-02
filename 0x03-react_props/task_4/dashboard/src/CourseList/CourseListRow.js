@@ -5,8 +5,10 @@ import PropTypes from 'prop-types';
 // textFirstCell (string, required)
 // textSecondCell (string, default: null)
 
-function CourseListRow(isHeader, textFirstCell, textSecondCell) {
-    const th
+function CourseListRow(props) {
+    isHeader = props.isHeader;
+    textFirstCell = props.textFirstCell;
+    textSecondCell = props.textSecondCell;
     if (isHeader) {
         if (textSecondCell == null) {
             return (
@@ -34,4 +36,13 @@ function CourseListRow(isHeader, textFirstCell, textSecondCell) {
     }
 };
 
+CourseListRow.propTypes = {
+    isHeader: PropTypes.bool,
+    textFirstCell: PropTypes.string.isRequired,
+    textSecondCell: PropTypes.string    
+};
+CourseListRow.defaultProps = {
+    isHeader: false,
+    textSecondCell: null
+};
 export default CourseListRow;
